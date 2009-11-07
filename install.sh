@@ -1,6 +1,12 @@
 #!/bin/bash
 
-for dotfile in $(find home -type f); do
-	target=`echo ${dotfile} | sed -e 's@home/@@' | sed -e 's@dot/@.@'`
-	cp $dotfile ~/$target
+for item in $(find dot); do
+	target=~/`echo $item | sed -e 's@dot/*@.@'`
+	
+	if [ -d $item ]; then
+		test -d $target || mkdir -p $target
+	elif [ -f $item ]; then
+		echo "Copying ${item} to ${target}" 
+		cp $item $target
+	fi
 done

@@ -1,0 +1,4 @@
+alias ..="cd .."
+alias s="sudo"
+alias ls="ls -GF"
+alias ll="ls -laGF"
