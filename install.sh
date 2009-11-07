@@ -1,6 +1,7 @@
 #!/bin/bash
 
-for item in $(find dot); do
+for item in $(find dot ! -ipath '**/.*'); do
+  
   target=~/`echo $item | sed -e 's@dot/*@.@'`
 
   if [ -d $item ]; then
