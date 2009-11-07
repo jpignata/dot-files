@@ -1,0 +1,5 @@
+EDITOR="mate -w"
+VISUAL=$EDITOR
+PS1='\u@\h:\w$(__git_ps1 "(%s)")\$ '
+
+export EDITOR VISUAL PS1

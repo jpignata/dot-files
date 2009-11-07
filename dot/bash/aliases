@@ -1,4 +1,6 @@
 alias ..="cd .."
 alias s="sudo"
-alias ls="ls -GF"
-alias ll="ls -laGF"
+alias ls="ls -Gp"
+alias ll="ls -laGp"
+alias df="df -h"
+alias du="du -h"
