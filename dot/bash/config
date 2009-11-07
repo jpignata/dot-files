@@ -1,5 +1,6 @@
 EDITOR="mate -w"
 VISUAL=$EDITOR
 PS1='\u@\h:\w$(__git_ps1 "(%s)")\$ '
+GIT_PS1_SHOWDIRTYSTATE=true
 
-export EDITOR VISUAL PS1
+export EDITOR VISUAL GIT_PS1_SHOWDIRTYSTATE PS1
