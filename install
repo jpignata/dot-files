@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 for item in $(find dot ! -ipath '**/.*'); do
   
