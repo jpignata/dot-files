@@ -1,0 +1,24 @@
+[github]
+	user = jpignata
+
+[user]
+	name = John Pignata
+	email = john.pignata@gmail.com
+
+[color]
+	diff = auto
+	status = auto
+	branch = auto
+
+[alias]
+  st = status
+  di = diff
+  co = checkout
+  ci = commit
+
+[core]
+  legacyheaders = false
+  editor = vim
+
+[github]
+  user = jpignata
