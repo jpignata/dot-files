@@ -3,5 +3,6 @@ EDITOR="mate -w"
 VISUAL=$EDITOR
 PS1='\u@\h:\w$(__git_ps1 "(%s)")\$ '
 GIT_PS1_SHOWDIRTYSTATE=true
+PATH=/bin:/usr/bin:/usr/local/bin:/opt/local/bin:/sbin:/usr/sbin:/usr/local/sbin:/usr/X11/bin
 
-export EDITOR VISUAL GIT_PS1_SHOWDIRTYSTATE PS1 RUBYOPT
+export EDITOR VISUAL GIT_PS1_SHOWDIRTYSTATE PS1 RUBYOPT PATH

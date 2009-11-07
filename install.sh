@@ -10,3 +10,5 @@ for item in $(find dot); do
     cp $item $target
   fi
 done
+
+. ~/.bashrc
