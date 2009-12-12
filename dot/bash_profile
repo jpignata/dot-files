@@ -1,6 +1,5 @@
 . ~/.bash/completion/git-completion.bash
 . ~/.bash/aliases
 . ~/.bash/config
-. ~/.bash/completion/ruby-completion/completion-ruby-all
 
 test -f ~/.localrc  && . ~/.localrc

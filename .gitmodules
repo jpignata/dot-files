@@ -1,3 +1,0 @@
-[submodule "dot/bash/completion/ruby-completion"]
-	path = dot/bash/completion/ruby-completion
-	url = git://github.com/mernen/completion-ruby.git
