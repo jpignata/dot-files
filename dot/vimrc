@@ -19,3 +19,5 @@ set ruler
 
 filetype plugin indent on
 syntax enable
+
+call pathogen#infect()
