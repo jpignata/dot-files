@@ -1,5 +1,7 @@
 #!/bin/sh
 
+git submodule update --init
+
 for item in $(find dot ! -ipath '**/.*'); do
   target=~/`echo $item | sed -e 's@dot/*@.@'`
 
