@@ -1,5 +1,5 @@
 [submodule "dot/vim/autoload/pathogen"]
-	path = dot/vim/autoload/pathogen
+	path = dot/vim/pathogen
 	url = https://github.com/tpope/vim-pathogen.git
 [submodule "dot/vim/bundle/colors/Color-Sampler-Pack"]
 	path = dot/vim/bundle/colors/Color-Sampler-Pack
@@ -25,3 +25,6 @@
 [submodule "dot/vim/bundle/colors/vividchalk"]
 	path = dot/vim/bundle/colors/vividchalk
 	url = https://github.com/tpope/vim-vividchalk.git
+[submodule "dot/vim/pathogen"]
+	path = dot/vim/pathogen
+	url = https://github.com/tpope/vim-pathogen.git
