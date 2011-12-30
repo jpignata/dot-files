@@ -1,2 +1,3 @@
 "color railscasts+
 set guifont=Inconsolata:h18
+set guioptions=egmrt
