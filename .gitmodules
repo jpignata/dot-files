@@ -25,3 +25,6 @@
 [submodule "dot/vim/bundle/vim-fugitive"]
 	path = dot/vim/bundle/vim-fugitive
 	url = git://github.com/tpope/vim-fugitive.git
+[submodule "dot/vim/bundle/nerdtree"]
+	path = dot/vim/bundle/nerdtree
+	url = https://github.com/scrooloose/nerdtree.git

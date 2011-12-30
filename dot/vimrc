@@ -21,6 +21,7 @@ set smartcase
 set textwidth=80
 set colorcolumn=+0
 set ruler
+set number
 
 filetype plugin indent on
 syntax enable
