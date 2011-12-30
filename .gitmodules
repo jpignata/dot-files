@@ -1,27 +1,27 @@
-[submodule "dot/vim/core/pathogen"]
-	path = dot/vim/core/pathogen
+[submodule "dot/vim/bundle/core/pathogen"]
+	path = dot/vim/bundle/core/pathogen
 	url = https://github.com/tpope/vim-pathogen.git
-[submodule "dot/vim/colors/Color-Sampler-Pack"]
-	path = dot/vim/colors/Color-Sampler-Pack
+[submodule "dot/vim/bundle/colors/Color-Sampler-Pack"]
+	path = dot/vim/bundle/colors/Color-Sampler-Pack
 	url = https://github.com/vim-scripts/Color-Sampler-Pack.git
-[submodule "dot/vim/colors/solarized"]
-	path = dot/vim/colors/solarized
+[submodule "dot/vim/bundle/colors/solarized"]
+	path = dot/vim/bundle/colors/solarized
 	url = https://github.com/altercation/vim-colors-solarized.git
-[submodule "dot/vim/colors/irblack"]
-	path = dot/vim/colors/irblack
+[submodule "dot/vim/bundle/colors/irblack"]
+	path = dot/vim/bundle/colors/irblack
 	url = https://github.com/wgibbs/vim-irblack.git
-[submodule "dot/vim/colors/molokai"]
-	path = dot/vim/colors/molokai
+[submodule "dot/vim/bundle/colors/molokai"]
+	path = dot/vim/bundle/colors/molokai
 	url = https://github.com/vim-scripts/molokai.git
-[submodule "dot/vim/colors/pyte"]
-	path = dot/vim/colors/pyte
+[submodule "dot/vim/bundle/colors/pyte"]
+	path = dot/vim/bundle/colors/pyte
 	url = https://github.com/vim-scripts/pyte.git
-[submodule "dot/vim/colors/github"]
-	path = dot/vim/colors/github
+[submodule "dot/vim/bundle/colors/github"]
+	path = dot/vim/bundle/colors/github
 	url = https://github.com/telamon/vim-color-github.git
-[submodule "dot/vim/colors/getafe"]
-	path = dot/vim/colors/getafe
+[submodule "dot/vim/bundle/colors/getafe"]
+	path = dot/vim/bundle/colors/getafe
 	url = https://github.com/larssmit/getafe.git
-[submodule "dot/vim/colors/vividchalk"]
-	path = dot/vim/colors/vividchalk
+[submodule "dot/vim/bundle/colors/vividchalk"]
+	path = dot/vim/bundle/colors/vividchalk
 	url = https://github.com/tpope/vim-vividchalk.git
