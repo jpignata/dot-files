@@ -1,0 +1,21 @@
+set directory=~/.vim/tmp
+set nocompatible
+set encoding=utf-8
+set showcmd
+
+set nowrap
+set tabstop=2 shiftwidth=2
+set expandtab
+set backspace=indent,eol,start
+
+set hlsearch
+set incsearch
+set ignorecase
+set smartcase
+
+set textwidth=80
+set colorcolumn=+0
+set ruler
+
+filetype plugin indent on
+syntax enable
