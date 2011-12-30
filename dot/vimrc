@@ -13,6 +13,13 @@ set tabstop=2 shiftwidth=2
 set expandtab
 set backspace=indent,eol,start
 
+set list
+set listchars=""
+set listchars=tab:..
+set listchars+=trail:.
+set listchars+=extends:>
+set listchars+=precedes:<
+
 set hlsearch
 set incsearch
 set ignorecase
@@ -25,3 +32,5 @@ set number
 
 filetype plugin indent on
 syntax enable
+
+:map <leader>n :execute 'NERDTreeToggle ' . getcwd()<CR>
