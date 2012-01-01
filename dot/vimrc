@@ -34,6 +34,10 @@ set number
 filetype plugin indent on
 syntax enable
 
+function! RSpec(args)
+ execute ":silent ! run-in-terminal.applescript 'rspec " . a:args . " %'"
+endfunction
+
 " leader-n to toggle nerdtree
 :map <leader>n :execute 'NERDTreeToggle ' . getcwd()<CR>
 
@@ -45,11 +49,6 @@ syntax enable
 
 " leader-cl to copy the current filename and line number to the clipboard
 :map <leader>cl :let @*=expand("%:p") . ":" . <C-r>=line('.')<CR><CR>
-
-" Use !s and !S to run specs
-function! RSpec(args)
- execute ":silent ! run-in-terminal.applescript 'rspec " . a:args . " %'"
-endfunction
 
 " command-R to run a focused spec
 map <D-R> :call RSpec("-l " . <C-r>=line('.')<CR>)<CR>
