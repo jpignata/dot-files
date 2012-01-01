@@ -12,6 +12,7 @@ set nowrap
 set tabstop=2 shiftwidth=2
 set expandtab
 set backspace=indent,eol,start
+set paste
 
 set list
 set listchars=""
@@ -33,4 +34,25 @@ set number
 filetype plugin indent on
 syntax enable
 
+" leader-n to toggle nerdtree
 :map <leader>n :execute 'NERDTreeToggle ' . getcwd()<CR>
+
+" leader-cs to copy the current filename to the clipboard (relative path)
+:map <leader>cs :let @*=expand("%")<CR>
+
+" leader-cp to copy the current filename to the clipboard (absolute path)
+:map <leader>cp :let @*=expand("%:p")<CR>
+
+" leader-cl to copy the current filename and line number to the clipboard
+:map <leader>cl :let @*=expand("%:p") . ":" . <C-r>=line('.')<CR><CR>
+
+" Use !s and !S to run specs
+function! RSpec(args)
+ execute ":silent ! run-in-terminal.applescript 'rspec " . a:args . " %'"
+endfunction
+
+" command-R to run a focused spec
+map <D-R> :call RSpec("-l " . <C-r>=line('.')<CR>)<CR>
+
+" command-r to run all specs
+map <D-r> :call RSpec("")<CR>
