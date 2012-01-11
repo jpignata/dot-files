@@ -55,3 +55,8 @@ map <D-R> :call RSpec("-l " . <C-r>=line('.')<CR>)<CR>
 
 " command-r to run all specs
 map <D-r> :call RSpec("")<CR>
+
+" command-/ to toggle comments via NERDCommenter
+nmap <D-/> <leader>c<space>
+vmap <D-/> <leader>c<space>
+imap <D-/> <C-O><leader>c<space>
