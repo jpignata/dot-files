@@ -60,3 +60,6 @@ map <D-r> :call RSpec("")<CR>
 nmap <D-/> <leader>c<space>
 vmap <D-/> <leader>c<space>
 imap <D-/> <C-O><leader>c<space>
+
+" <return> to :nohlsearch
+map <return> :nohlsearch<CR>
