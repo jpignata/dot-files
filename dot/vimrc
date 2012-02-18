@@ -33,6 +33,7 @@ set textwidth=80
 set colorcolumn=80
 set ruler
 set number
+set laststatus=2
 set numberwidth=4
 set autoindent
 
