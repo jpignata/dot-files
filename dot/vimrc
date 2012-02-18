@@ -3,6 +3,9 @@ runtime pathogen/autoload/pathogen.vim
 call pathogen#infect()
 call pathogen#helptags()
 
+set nocompatible
+set hidden
+
 set directory=~/.vim/tmp
 set nocompatible
 set encoding=utf-8
@@ -30,6 +33,8 @@ set textwidth=80
 set colorcolumn=80
 set ruler
 set number
+set numberwidth=4
+set autoindent
 
 filetype plugin indent on
 syntax enable
