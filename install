@@ -1,7 +1,9 @@
 #!/bin/sh
 
+# Update submodules
 git submodule update --init
 
+# Copy dotfiles from dot/
 for item in $(find dot ! -ipath '**/.*'); do
   target=~/`echo $item | sed -e 's@dot/*@.@'`
 
@@ -13,12 +15,19 @@ for item in $(find dot ! -ipath '**/.*'); do
   fi
 done
 
+# Ensure ~/bin exists
 mkdir -p ~/bin
 
+# Move items from bin/
 for item in $(ls bin); do
   target=~/bin/$item
   echo "Copying bin/${item} to ${target}"   
   cp ./bin/$item $target
 done
 
+# Update environment
 . ~/.bashrc
+
+# Build vim plugins
+rvm use system
+cd ~/.vim/bundle/command-t && rake make

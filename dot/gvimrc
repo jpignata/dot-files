@@ -1,3 +1,6 @@
 color railscasts
 set guifont=Inconsolata:h18
 set guioptions=egmrt
+
+" unmap default command-T tab behavior
+macmenu &File.New\ Tab key=<nop>

@@ -37,3 +37,9 @@
 [submodule "dot/vim/bundle/Align"]
 	path = dot/vim/bundle/Align
 	url = https://github.com/vim-scripts/Align.git
+[submodule "dot/vim/bundle/command-t"]
+	path = dot/vim/bundle/command-t
+	url = git://git.wincent.com/command-t.git
+[submodule "bundle/command-t"]
+	path = bundle/command-t
+	url = git://git.wincent.com/command-t.git

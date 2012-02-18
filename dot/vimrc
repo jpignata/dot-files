@@ -63,3 +63,10 @@ imap <D-/> <C-O><leader>c<space>
 
 " <return> to :nohlsearch
 map <return> :nohlsearch<CR>
+
+" command-T to command-T plugin
+nnoremap <silent> <Leader>t :CommandT<CR>
+nnoremap <silent> <Leader>b :CommandTBuffer<CR>
+
+map <D-t> :CommandT<CR>
+map <D-T> :CommandT<CR>
