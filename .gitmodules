@@ -43,3 +43,9 @@
 [submodule "bundle/command-t"]
 	path = bundle/command-t
 	url = git://git.wincent.com/command-t.git
+[submodule "dot/vim/bundle/vim-irblack"]
+	path = dot/vim/bundle/vim-irblack
+	url = https://github.com/wgibbs/vim-irblack.git
+[submodule "dot/vim/bundle/janus-colors"]
+	path = dot/vim/bundle/janus-colors
+	url = https://github.com/TechnoGate/janus-colors.git
