@@ -1,6 +1,8 @@
 color ir_black
+
 set guifont=Inconsolata:h18
 set guioptions=egmrt
+set ruler
 
 " unmap default command-T tab behavior
 macmenu &File.New\ Tab key=<nop>
