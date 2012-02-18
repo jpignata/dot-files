@@ -70,3 +70,7 @@ map <D-T> :CommandTBuffer<CR>
 
 " command-L to copy the current filename and line number to the clipboard
 :map <D-L> :let @*=expand("%:p") . ":" . <C-r>=line('.')<CR><CR>
+
+" move through open buffers
+nmap <D-{> :bprev<CR>
+nmap <D-}> :bnext<CR>

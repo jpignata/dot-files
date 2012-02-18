@@ -7,3 +7,9 @@ set ruler
 
 " unmap default command-T tab behavior
 macmenu &File.New\ Tab key=<nop>
+
+" unmap default command-} tab next
+macmenu Window.Select\ Next\ Tab key=<nop>
+
+" unmap default command-{ tab previous
+macmenu Window.Select\ Previous\ Tab key=<nop>
