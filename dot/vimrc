@@ -37,6 +37,9 @@ set laststatus=2
 set numberwidth=4
 set autoindent
 
+set undofile
+set undodir=/tmp
+
 filetype plugin indent on
 syntax enable
 
