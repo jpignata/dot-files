@@ -1,4 +1,5 @@
 color ir_black
+hi ColorColumn guibg=#222222
 
 set guifont=Inconsolata:h18
 set guioptions=egmrt

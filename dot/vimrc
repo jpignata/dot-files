@@ -44,29 +44,9 @@ filetype plugin indent on
 syntax enable
 
 color desert
-hi ColorColumn guibg=#222222
 
-function! RSpec(args)
- execute ":silent ! run-in-terminal.applescript 'rspec " . a:args . " %'"
-endfunction
-
-" leader-n to toggle nerdtree
+" leader-n to toggle NERDTree
 :map <leader>n :execute 'NERDTreeToggle ' . getcwd()<CR>
-
-" leader-cs to copy the current filename to the clipboard (relative path)
-:map <leader>cs :let @*=expand("%")<CR>
-
-" leader-cp to copy the current filename to the clipboard (absolute path)
-:map <leader>cp :let @*=expand("%:p")<CR>
-
-" leader-cl to copy the current filename and line number to the clipboard
-:map <leader>cl :let @*=expand("%:p") . ":" . <C-r>=line('.')<CR><CR>
-
-" command-R to run a focused spec
-map <D-R> :call RSpec("-l " . <C-r>=line('.')<CR>)<CR>
-
-" command-r to run all specs
-map <D-r> :call RSpec("")<CR>
 
 " command-/ to toggle comments via NERDCommenter
 nmap <D-/> <leader>c<space>
@@ -79,6 +59,14 @@ map <return> :nohlsearch<CR>
 " command-T to command-T plugin
 nnoremap <silent> <Leader>t :CommandT<CR>
 nnoremap <silent> <Leader>b :CommandTBuffer<CR>
-
 map <D-t> :CommandT<CR>
-map <D-T> :CommandT<CR>
+map <D-T> :CommandTBuffer<CR>
+
+" command-R to copy the current filename to the clipboard (relative path)
+:map <D-R> :let @*=expand("%")<CR>
+
+" command-A to copy the current filename to the clipboard (absolute path)
+:map <D-A> :let @*=expand("%:p")<CR>
+
+" command-L to copy the current filename and line number to the clipboard
+:map <D-L> :let @*=expand("%:p") . ":" . <C-r>=line('.')<CR><CR>
