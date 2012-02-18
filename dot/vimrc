@@ -34,6 +34,8 @@ set number
 filetype plugin indent on
 syntax enable
 
+color desert
+
 function! RSpec(args)
  execute ":silent ! run-in-terminal.applescript 'rspec " . a:args . " %'"
 endfunction
