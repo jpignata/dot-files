@@ -41,6 +41,7 @@ filetype plugin indent on
 syntax enable
 
 color desert
+hi ColorColumn guibg=#222222
 
 function! RSpec(args)
  execute ":silent ! run-in-terminal.applescript 'rspec " . a:args . " %'"
