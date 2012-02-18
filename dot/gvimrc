@@ -1,7 +1,7 @@
 color ir_black
 hi ColorColumn guibg=#222222
 
-set guifont=Inconsolata:h18
+set guifont=Inconsolata:h16
 set guioptions=egmrt
 set ruler
 
