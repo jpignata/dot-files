@@ -53,8 +53,8 @@ nmap <D-/> <leader>c<space>
 vmap <D-/> <leader>c<space>
 imap <D-/> <C-O><leader>c<space>
 
-" <return> to :nohlsearch
-map <return> :nohlsearch<CR>
+" leader-/ to :nohlsearch
+map <leader>/ :nohlsearch<CR>
 
 " command-T to command-T plugin
 nnoremap <silent> <Leader>t :CommandT<CR>
@@ -74,3 +74,16 @@ map <D-T> :CommandTBuffer<CR>
 " move through open buffers
 nmap <D-{> :bprev<CR>
 nmap <D-}> :bnext<CR>
+
+" move through window splits
+noremap <C-h> <C-w>h
+noremap <C-j> <C-w>j
+noremap <C-k> <C-w>k
+noremap <C-l> <C-w>l
+
+" make Y act like C, D et al and map to y$
+map Y y$
+
+" remap ; to : for maximum laziness
+nnoremap ; :
+vnoremap ; :
