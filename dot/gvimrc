@@ -2,8 +2,7 @@ color ir_black
 hi ColorColumn guibg=#222222
 
 set guifont=Inconsolata:h16
-set guioptions=egmtTc
-set guioptions-=rRl
+set guioptions=egmrt
 set ruler
 
 " unmap default command-T tab behavior
