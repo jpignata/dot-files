@@ -40,6 +40,9 @@ set autoindent
 set undofile
 set undodir=/tmp
 
+set wildmode=longest,list,full
+set wildmenu
+
 filetype plugin indent on
 syntax enable
 
