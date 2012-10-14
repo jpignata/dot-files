@@ -47,6 +47,7 @@ filetype plugin indent on
 syntax enable
 
 color desert
+set t_Co=256
 
 " leader-n to toggle NERDTree
 :map <leader>n :execute 'NERDTreeToggle ' . getcwd()<CR>
@@ -66,13 +67,13 @@ map <D-t> :CommandT<CR>
 map <D-T> :CommandTBuffer<CR>
 
 " command-R to copy the current filename to the clipboard (relative path)
-:map <D-R> :let @*=expand("%")<CR>
+:map <leader>r :let @*=expand("%")<CR>
 
 " command-A to copy the current filename to the clipboard (absolute path)
-:map <D-A> :let @*=expand("%:p")<CR>
+:map <leader>a :let @*=expand("%:p")<CR>
 
 " command-L to copy the current filename and line number to the clipboard
-:map <D-L> :let @*=expand("%:p") . ":" . <C-r>=line('.')<CR><CR>
+:map <leader>l :let @*=expand("%:p") . ":" . <C-r>=line('.')<CR><CR>
 
 " move through open buffers
 nmap <D-{> :bprev<CR>
@@ -90,3 +91,14 @@ map Y y$
 " remap ; to : for maximum laziness
 nnoremap ; :
 vnoremap ; :
+
+" Run current spec
+map <D-r> :call RunSpec("%")<CR>
+
+" Run current spec at current line
+map <D-R> :call RunSpec("%" . ":" . line('.'))<CR>
+
+function! RunSpec(filename)
+  :w
+  exec ":!bundle exec rspec --color " . a:filename
+endfunction
