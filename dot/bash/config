@@ -1,13 +1,8 @@
-RUBYOPT="-rubygems"
 EDITOR="vim"
 VISUAL="mvim"
-PS1='\u@\h:\w$(__git_ps1 "(%s)")\$ '
+PS1='\w$(__git_ps1 "(%s)")\$ '
 GIT_PS1_SHOWDIRTYSTATE=true
 
-PATH=/bin:/usr/bin:/usr/local/bin:/opt/local/bin:/opt/local/sbin:/sbin
-PATH=$PATH:/usr/sbin:/usr/local/sbin:/usr/X11/bin:~/bin
-PATH=$PATH:/opt/local/lib/postgresql84/bin/:/usr/local/mysql/bin
+PATH=/bin:/usr/bin:/usr/local/bin:/opt/local/bin:/opt/local/sbin:/sbin:/usr/sbin:/usr/local/sbin:/usr/X11/bin:~/bin
 
-export EDITOR VISUAL GIT_PS1_SHOWDIRTYSTATE PS1 RUBYOPT PATH
-
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
+export EDITOR VISUAL GIT_PS1_SHOWDIRTYSTATE PS1 PATH
