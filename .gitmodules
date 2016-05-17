@@ -1,51 +1,6 @@
 [submodule "dot/vim/pathogen"]
 	path = dot/vim/pathogen
 	url = https://github.com/tpope/vim-pathogen.git
-[submodule "dot/vim/bundle/vim-vividchalk"]
-	path = dot/vim/bundle/vim-vividchalk
-	url = https://github.com/tpope/vim-vividchalk.git
-[submodule "dot/vim/bundle/vim-colors-solarized.git"]
-	path = dot/vim/bundle/vim-colors-solarized.git
-	url = git://github.com/altercation/vim-colors-solarized.git
-[submodule "dot/vim/bundle/vim-rails"]
-	path = dot/vim/bundle/vim-rails
-	url = https://github.com/tpope/vim-rails.git
-[submodule "dot/vim/bundle/vim-coffee-script"]
-	path = dot/vim/bundle/vim-coffee-script
-	url = https://github.com/kchmck/vim-coffee-script.git
-[submodule "dot/vim/bundle/Color-Sampler-Pack"]
-	path = dot/vim/bundle/Color-Sampler-Pack
-	url = https://github.com/vim-scripts/Color-Sampler-Pack.git
-[submodule "dot/vim/bundle/vim-haml"]
-	path = dot/vim/bundle/vim-haml
-	url = https://github.com/tpope/vim-haml.git
-[submodule "dot/vim/bundle/ack.vim"]
-	path = dot/vim/bundle/ack.vim
-	url = https://github.com/mileszs/ack.vim.git
-[submodule "dot/vim/bundle/vim-fugitive"]
-	path = dot/vim/bundle/vim-fugitive
-	url = git://github.com/tpope/vim-fugitive.git
-[submodule "dot/vim/bundle/nerdtree"]
-	path = dot/vim/bundle/nerdtree
-	url = https://github.com/scrooloose/nerdtree.git
-[submodule "dot/vim/bundle/nerdcommenter"]
-	path = dot/vim/bundle/nerdcommenter
-	url = https://github.com/scrooloose/nerdcommenter.git
-[submodule "dot/vim/bundle/supertab"]
-	path = dot/vim/bundle/supertab
-	url = https://github.com/ervandew/supertab.git
-[submodule "dot/vim/bundle/Align"]
-	path = dot/vim/bundle/Align
-	url = https://github.com/vim-scripts/Align.git
-[submodule "dot/vim/bundle/command-t"]
-	path = dot/vim/bundle/command-t
-	url = git://git.wincent.com/command-t.git
 [submodule "bundle/command-t"]
 	path = bundle/command-t
 	url = git://git.wincent.com/command-t.git
-[submodule "dot/vim/bundle/vim-irblack"]
-	path = dot/vim/bundle/vim-irblack
-	url = https://github.com/wgibbs/vim-irblack.git
-[submodule "dot/vim/bundle/janus-colors"]
-	path = dot/vim/bundle/janus-colors
-	url = https://github.com/TechnoGate/janus-colors.git

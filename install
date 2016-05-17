@@ -1,8 +1,5 @@
 #!/bin/sh
 
-# Update submodules
-git submodule update --init
-
 # Copy dotfiles from dot/
 for item in $(find dot ! -ipath '**/.*'); do
   target=~/`echo $item | sed -e 's@dot/*@.@'`
@@ -27,7 +24,3 @@ done
 
 # Update environment
 . ~/.bashrc
-
-# Build vim plugins
-rvm use system
-cd ~/.vim/bundle/command-t && rake make
