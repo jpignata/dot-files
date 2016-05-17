@@ -1,8 +1,3 @@
-runtime pathogen/autoload/pathogen.vim
-
-call pathogen#infect()
-call pathogen#helptags()
-
 set nocompatible
 set hidden
 
@@ -46,25 +41,10 @@ set wildmenu
 filetype plugin indent on
 syntax enable
 
-color desert
 set t_Co=256
-
-" leader-n to toggle NERDTree
-:map <leader>n :execute 'NERDTreeToggle ' . getcwd()<CR>
-
-" command-/ to toggle comments via NERDCommenter
-nmap <D-/> <leader>c<space>
-vmap <D-/> <leader>c<space>
-imap <D-/> <C-O><leader>c<space>
 
 " leader-/ to :nohlsearch
 map <leader>/ :nohlsearch<CR>
-
-" command-T to command-T plugin
-nnoremap <silent> <Leader>t :CommandT<CR>
-nnoremap <silent> <Leader>b :CommandTBuffer<CR>
-map <D-t> :CommandT<CR>
-map <D-T> :CommandTBuffer<CR>
 
 " command-R to copy the current filename to the clipboard (relative path)
 :map <leader>r :let @*=expand("%")<CR>
@@ -91,14 +71,3 @@ map Y y$
 " remap ; to : for maximum laziness
 nnoremap ; :
 vnoremap ; :
-
-" Run current spec
-map <D-r> :call RunSpec("%")<CR>
-
-" Run current spec at current line
-map <D-R> :call RunSpec("%" . ":" . line('.'))<CR>
-
-function! RunSpec(filename)
-  :w
-  exec ":!bundle exec rspec --color " . a:filename
-endfunction
