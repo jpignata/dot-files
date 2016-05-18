@@ -18,7 +18,7 @@
 
 [core]
   legacyheaders = false
-  editor = vim
+  editor = nvim
 
 [github]
   user = jpignata

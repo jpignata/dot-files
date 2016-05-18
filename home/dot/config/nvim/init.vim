@@ -44,7 +44,9 @@ syntax enable
 
 set t_Co=256
 color ir_black
+
 let g:airline_theme='jellybeans'
+
 
 " leader-n to toggle NERDTree
 :map <leader>n :execute 'NERDTreeToggle ' . getcwd()<CR>
