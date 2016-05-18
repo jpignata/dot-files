@@ -1,5 +1,6 @@
 #!/bin/sh
 
+# Copy files
 for item in $(find home ! -ipath '**/.*'); do
   target=~/`echo $item | sed -e 's/home\///' -e 's@dot/*@.@'`
 
@@ -9,6 +10,26 @@ for item in $(find home ! -ipath '**/.*'); do
     echo "Copying ${item} to ${target}" 
     cp $item $target
   fi
+done
+
+# Clone vim plugins
+repos=(
+https://github.com/scrooloose/nerdcommenter.git
+https://github.com/scrooloose/nerdtree.git
+https://github.com/vim-ruby/vim-ruby.git
+https://github.com/vim-airline/vim-airline.git
+https://github.com/vim-airline/vim-airline-themes.git
+https://github.com/tpope/vim-vividchalk.git
+https://github.com/tpope/vim-fugitive.git
+https://github.com/twerth/ir_black.git
+)
+
+for repo in ${repos[@]}; do
+  echo "Cloning ${repo}"
+
+  cd ~/.config/nvim/bundle && \
+    rm -rf $(basename $repo | sed -e 's/\.git$//') && \
+    git clone -q $repo
 done
 
 # Update environment

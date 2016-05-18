@@ -1,12 +1,11 @@
 execute pathogen#infect()
 
-set nocompatible
 set hidden
-
-set directory=~/.vim/tmp
-set nocompatible
+set directory=~/nvim/tmp
 set encoding=utf-8
 set showcmd
+set visualbell
+set autoread
 
 set nowrap
 set tabstop=2 shiftwidth=2
@@ -44,17 +43,22 @@ filetype plugin indent on
 syntax enable
 
 set t_Co=256
+color ir_black
+let g:airline_theme='jellybeans'
+
+" leader-n to toggle NERDTree
+:map <leader>n :execute 'NERDTreeToggle ' . getcwd()<CR>
 
 " leader-/ to :nohlsearch
 map <leader>/ :nohlsearch<CR>
 
-" command-R to copy the current filename to the clipboard (relative path)
+" leader-r to copy the current filename to the clipboard (relative path)
 :map <leader>r :let @*=expand("%")<CR>
 
-" command-A to copy the current filename to the clipboard (absolute path)
+" leader-a to copy the current filename to the clipboard (absolute path)
 :map <leader>a :let @*=expand("%:p")<CR>
 
-" command-L to copy the current filename and line number to the clipboard
+" leader-l to copy the current filename and line number to the clipboard
 :map <leader>l :let @*=expand("%:p") . ":" . <C-r>=line('.')<CR><CR>
 
 " move through open buffers
