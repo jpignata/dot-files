@@ -1,8 +1,7 @@
 #!/bin/sh
 
-# Copy dotfiles from dot/
-for item in $(find dot ! -ipath '**/.*'); do
-  target=~/`echo $item | sed -e 's@dot/*@.@'`
+for item in $(find home ! -ipath '**/.*'); do
+  target=~/`echo $item | sed -e 's/home\///' -e 's@dot/*@.@'`
 
   if [ -d $item ]; then
     test -d $target || mkdir -p $target
@@ -10,16 +9,6 @@ for item in $(find dot ! -ipath '**/.*'); do
     echo "Copying ${item} to ${target}" 
     cp $item $target
   fi
-done
-
-# Ensure ~/bin exists
-mkdir -p ~/bin
-
-# Copy items from bin/
-for item in $(ls bin); do
-  target=~/bin/$item
-  echo "Copying bin/${item} to ${target}"   
-  cp ./bin/$item $target
 done
 
 # Update environment
