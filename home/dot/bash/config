@@ -1,8 +1,10 @@
-EDITOR="vim"
-VISUAL="mvim"
-PS1='\w$(__git_ps1 "(%s)")\$ '
-GIT_PS1_SHOWDIRTYSTATE=true
+complete -C '/usr/local/bin/aws_completer' aws
+complete -C '~/.bash/completion/git-completion.bash' git
 
+EDITOR='nvim'
+VISUAL='nvim'
+GIT_PS1_SHOWDIRTYSTATE=true
+PS1='\w$(__git_ps1 "(%s)")\$ '
 PATH=/bin:/usr/bin:/usr/local/bin:/opt/local/bin:/opt/local/sbin:/sbin:/usr/sbin:/usr/local/sbin:/usr/X11/bin:~/bin
 
 export EDITOR VISUAL GIT_PS1_SHOWDIRTYSTATE PS1 PATH
