@@ -1,5 +1,7 @@
 complete -C '/usr/local/bin/aws_completer' aws
-complete -C '~/.bash/completion/git-completion.bash' git
+
+. ~/.bash/git/git-completion.bash
+. ~/.bash/git/git-prompt.sh
 
 EDITOR='nvim'
 VISUAL='nvim'
