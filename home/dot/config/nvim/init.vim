@@ -39,6 +39,8 @@ set undodir=/tmp
 set wildmode=longest,list,full
 set wildmenu
 
+set clipboard=unnamedplus,unnamed
+
 filetype plugin indent on
 syntax enable
 
