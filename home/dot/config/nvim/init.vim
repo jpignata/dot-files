@@ -8,7 +8,8 @@ set visualbell
 set autoread
 
 set nowrap
-set tabstop=2 shiftwidth=2
+set tabstop=2
+set shiftwidth=2
 set expandtab
 set backspace=indent,eol,start
 set paste
