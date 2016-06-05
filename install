@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # Copy files
 for item in $(find home ! -ipath '**/.*'); do
