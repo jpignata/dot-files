@@ -1,4 +1,4 @@
-complete -C '/usr/local/bin/aws_completer' aws
+complete -C '/usr/local/aws/bin/aws_completer' aws
 
 . ~/.bash/git/git-completion.bash
 . ~/.bash/git/git-prompt.sh
