@@ -44,9 +44,12 @@ set clipboard=unnamedplus,unnamed
 filetype plugin indent on
 syntax enable
 
-color ir_black
+set background=dark
+let g:solarized_termcolors=256
+colorscheme solarized
 
-let g:airline_theme='jellybeans'
+let g:airline_powerline_fonts = 1
+let g:airline_theme = 'bubblegum'
 
 " leader-n to toggle NERDTree
 :map <leader>n :execute 'NERDTreeToggle ' . getcwd()<CR>
