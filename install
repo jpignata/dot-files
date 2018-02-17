@@ -25,6 +25,8 @@ https://github.com/tpope/vim-sensible.git
 https://github.com/twerth/ir_black.git
 https://github.com/altercation/vim-colors-solarized.git
 https://github.com/fatih/vim-go.git
+https://github.com/ctrlpvim/ctrlp.vim
+https://github.com/mileszs/ack.vim
 )
 
 rm -rf ~/.config/nvim/bundle/*

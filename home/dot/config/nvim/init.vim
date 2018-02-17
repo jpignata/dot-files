@@ -15,10 +15,7 @@ set backspace=indent,eol,start
 
 set list
 set listchars=""
-set listchars=tab:..
-set listchars+=trail:.
-set listchars+=extends:>
-set listchars+=precedes:<
+set listchars=tab:..,trail:.,extends:>,precedes:<
 
 set hlsearch
 set incsearch
@@ -82,3 +79,17 @@ map Y y$
 " remap ; to : for maximum laziness
 nnoremap ; :
 vnoremap ; :
+
+" Golang
+autocmd FileType go set listchars=tab:\ \ ,trail:.,extends:>,precedes:<
+autocmd FileType go set textwidth=120
+autocmd FileType go set colorcolumn=120
+
+augroup vimrc
+  autocmd!
+  autocmd FileType go
+    \   set listchars=tab:\ \ ,trail:.,extends:>,precedes:<
+    \ | set textwidth=120
+    \ | set colorcolumn=120
+augroup END
+
