@@ -1,7 +1,7 @@
 execute pathogen#infect()
 
 set hidden
-set directory=~/nvim/tmp
+set directory=~/.nvim/tmp
 set encoding=utf-8
 set showcmd
 set visualbell
@@ -31,7 +31,7 @@ set numberwidth=4
 set autoindent
 
 set undofile
-set undodir=/tmp
+set undodir=~/.nvim/tmp/undo
 
 set wildmode=longest,list,full
 set wildmenu
