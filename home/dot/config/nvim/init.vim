@@ -41,9 +41,7 @@ set clipboard=unnamedplus,unnamed
 filetype plugin indent on
 syntax enable
 
-set background=dark
-let g:solarized_termcolors=256
-colorscheme solarized
+colorscheme ir_black
 
 let g:airline_powerline_fonts = 1
 let g:airline_theme = 'bubblegum'
