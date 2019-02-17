@@ -1,4 +1,27 @@
-execute pathogen#infect()
+set nocompatible
+filetype off
+
+set rtp+=~/.config/nvim/bundle/Vundle.vim
+call vundle#begin('~/.config/nvim/bundle')
+
+Plugin 'twerth/ir_black'
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'scrooloose/nerdtree'
+Plugin 'vim-ruby/vim-ruby'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+Plugin 'tpope/vim-endwise'
+Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-sensible'
+Plugin 'fatih/vim-go'
+Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'mileszs/ack.vim'
+Plugin 'SirVer/ultisnips'
+Plugin 'tpope/vim-commentary'
+Plugin 'honza/vim-snippets'
+Plugin 'Valloric/YouCompleteMe'
+
+call vundle#end()
 
 set hidden
 set directory=~/.nvim/tmp
@@ -41,7 +64,7 @@ set clipboard=unnamedplus,unnamed
 filetype plugin indent on
 syntax enable
 
-colorscheme ir_black
+silent! colorscheme ir_black
 
 let g:airline_powerline_fonts = 1
 let g:airline_theme = 'bubblegum'
@@ -91,3 +114,7 @@ augroup vimrc
     \ | set colorcolumn=120
 augroup END
 
+" UltiSnips
+let g:UltiSnipsExpandTrigger="<c-j>"
+let g:UltiSnipsJumpForwardTrigger="<c-j>"
+let g:UltiSnipsJumpBackwardTrigger="<c-k>"
