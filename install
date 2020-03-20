@@ -16,9 +16,3 @@ done
 rm -rf ~/.config/nvim/bundle/Vundle.vim
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.config/nvim/bundle/Vundle.vim
 nvim +PluginInstall +qall
-
-# Build YouCompleteMe server
-cd ~/.config/nvim/bundle/YouCompleteMe && ./install.py --clang-completer
-
-# Update environment
-. ~/.bashrc

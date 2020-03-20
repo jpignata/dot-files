@@ -1,4 +1,0 @@
-. ~/.bash/config
-. ~/.bash/aliases
-
-test -f ~/.localrc  && . ~/.localrc

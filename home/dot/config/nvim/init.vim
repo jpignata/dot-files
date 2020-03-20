@@ -19,7 +19,6 @@ Plugin 'mileszs/ack.vim'
 Plugin 'SirVer/ultisnips'
 Plugin 'tpope/vim-commentary'
 Plugin 'honza/vim-snippets'
-Plugin 'Valloric/YouCompleteMe'
 
 call vundle#end()
 
