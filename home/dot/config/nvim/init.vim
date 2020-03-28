@@ -19,7 +19,6 @@ Plugin 'mileszs/ack.vim'
 Plugin 'SirVer/ultisnips'
 Plugin 'tpope/vim-commentary'
 Plugin 'honza/vim-snippets'
-Plugin 'mileszs/ack.vim'
 Plugin 'leafgarland/typescript-vim'
 Plugin 'peitalin/vim-jsx-typescript'
 
