@@ -19,6 +19,9 @@ Plugin 'mileszs/ack.vim'
 Plugin 'SirVer/ultisnips'
 Plugin 'tpope/vim-commentary'
 Plugin 'honza/vim-snippets'
+Plugin 'mileszs/ack.vim'
+Plugin 'leafgarland/typescript-vim'
+Plugin 'peitalin/vim-jsx-typescript'
 
 call vundle#end()
 
@@ -117,3 +120,8 @@ augroup END
 let g:UltiSnipsExpandTrigger="<c-j>"
 let g:UltiSnipsJumpForwardTrigger="<c-j>"
 let g:UltiSnipsJumpBackwardTrigger="<c-k>"
+
+" Ack
+if executable('ag')
+  let g:ackprg = 'ag --vimgrep'
+endif
