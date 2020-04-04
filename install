@@ -16,3 +16,9 @@ done
 rm -rf ~/.config/nvim/bundle/Vundle.vim
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.config/nvim/bundle/Vundle.vim
 nvim +PluginInstall +qall
+
+# Install toolbox tools
+export PREFIX=~/bin
+for item in aoc bitly gist; do
+  curl -sf https://gobinaries.com/jpignata/toolbox/$item | PREFIX=~/bin sh
+done
