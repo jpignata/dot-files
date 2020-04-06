@@ -124,3 +124,6 @@ let g:UltiSnipsJumpBackwardTrigger="<c-k>"
 if executable('ag')
   let g:ackprg = 'ag --vimgrep'
 endif
+
+" Ctrlp
+let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
