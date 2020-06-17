@@ -10,12 +10,6 @@
 	status = auto
 	branch = auto
 
-[alias]
-  st = status
-  di = diff
-  co = checkout
-  ci = commit
-
 [core]
   legacyheaders = false
   editor = nvim
