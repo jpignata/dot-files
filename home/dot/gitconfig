@@ -1,17 +1,13 @@
-[github]
-	user = jpignata
-
 [user]
-	name = John Pignata
-	email = john@pignata.com
+  name = John Pignata
+  email = john@pignata.com
 
 [color]
-	diff = auto
-	status = auto
-	branch = auto
+  diff = auto
+  status = auto
+  branch = auto
 
 [core]
-  legacyheaders = false
   editor = nvim
 
 [github]
