@@ -1,24 +1,30 @@
 #!/bin/bash
 
 # Copy files
-for item in $(find home ! -ipath '**/.*' ! -ipath home); do
-  target=~/`echo $item | sed -e 's/home\///' -e 's@dot/*@.@'`
+paths=$(mktemp -q) && {
+  find home ! -ipath '**/.*' ! -ipath home > "$paths"
 
-  if [ -d $item ]; then
-    test -d $target || mkdir -p $target
-  elif [ -f $item ]; then
-    echo "Copying ${item} to ${target}" 
-    cp $item $target
-  fi
-done
+  while IFS= read -r path
+  do
+    target=~/$(echo "$path" | sed -e 's/home\///' -e 's@dot/*@.@')
 
-# Install vim plugins via Vundle
+    if [ -d "$path" ]; then
+      test -d "$target" || mkdir -p "$target"
+    elif [ -f "$path" ]; then
+      echo "Copying ${path} to ${target}" 
+      cp "$path" "$target"
+    fi
+  done < "$paths"
+
+  rm "$paths"
+}
+
+## Install vim plugins via Vundle
 rm -rf ~/.config/nvim/bundle/Vundle.vim
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.config/nvim/bundle/Vundle.vim
 nvim +PluginInstall +qall
 
-# Install toolbox tools
-export PREFIX=~/bin
+## Install toolbox tools
 for item in aoc bitly gist; do
   curl -sf https://gobinaries.com/jpignata/toolbox/$item | PREFIX=~/bin sh
 done
