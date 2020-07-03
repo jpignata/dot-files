@@ -11,10 +11,6 @@ alias vi="nvim"
 alias v="nvim"
 alias ws="cd ~/workspace"
 
-prompt_context(){
-  prompt_segment black default "%(!.%{%F{yellow}%}.)$USER"
-} 
-
 if [ -r ~/.zshrc.local ]; then
   source ~/.zshrc.local
 fi
