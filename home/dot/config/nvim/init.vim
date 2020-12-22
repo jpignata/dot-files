@@ -16,11 +16,6 @@ Plugin 'tpope/vim-sensible'
 Plugin 'fatih/vim-go'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'mileszs/ack.vim'
-Plugin 'SirVer/ultisnips'
-Plugin 'tpope/vim-commentary'
-Plugin 'honza/vim-snippets'
-Plugin 'leafgarland/typescript-vim'
-Plugin 'peitalin/vim-jsx-typescript'
 
 call vundle#end()
 
