@@ -4,18 +4,20 @@ filetype off
 set rtp+=~/.config/nvim/bundle/Vundle.vim
 call vundle#begin('~/.config/nvim/bundle')
 
-Plugin 'twerth/ir_black'
 Plugin 'VundleVim/Vundle.vim'
+Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'fatih/vim-go'
+Plugin 'mileszs/ack.vim'
 Plugin 'scrooloose/nerdtree'
-Plugin 'vim-ruby/vim-ruby'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
 Plugin 'tpope/vim-endwise'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-sensible'
-Plugin 'fatih/vim-go'
-Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'mileszs/ack.vim'
+Plugin 'twerth/ir_black'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+Plugin 'vim-ruby/vim-ruby'
+Plugin 'vim-scripts/indentpython.vim'
+Plugin 'vim-syntastic/syntastic'
 
 call vundle#end()
 
@@ -41,8 +43,8 @@ set incsearch
 set ignorecase
 set smartcase
 
-set textwidth=80
-set colorcolumn=80
+set textwidth=120
+set colorcolumn=120
 set ruler
 set number
 set laststatus=2
@@ -96,24 +98,6 @@ map Y y$
 " remap ; to : for maximum laziness
 nnoremap ; :
 vnoremap ; :
-
-" Golang
-autocmd FileType go set listchars=tab:\ \ ,trail:.,extends:>,precedes:<
-autocmd FileType go set textwidth=120
-autocmd FileType go set colorcolumn=120
-
-augroup vimrc
-  autocmd!
-  autocmd FileType go
-    \   set listchars=tab:\ \ ,trail:.,extends:>,precedes:<
-    \ | set textwidth=120
-    \ | set colorcolumn=120
-augroup END
-
-" UltiSnips
-let g:UltiSnipsExpandTrigger="<c-j>"
-let g:UltiSnipsJumpForwardTrigger="<c-j>"
-let g:UltiSnipsJumpBackwardTrigger="<c-k>"
 
 " Ack
 if executable('ag')
