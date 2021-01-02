@@ -301,7 +301,15 @@ good-names=i,
            x,
            y,
            z,
-           w
+           w,
+           dx,
+           dy,
+           cx,
+           cy,
+           sx,
+           sy,
+           ny,
+           nx
 
 # Good variable names regexes, separated by a comma. If names match any regex,
 # they will always be accepted
