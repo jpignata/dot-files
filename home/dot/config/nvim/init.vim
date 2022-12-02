@@ -9,6 +9,7 @@ Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'fatih/vim-go'
 Plugin 'mileszs/ack.vim'
 Plugin 'scrooloose/nerdtree'
+Plugin 'scrooloose/nerdcommenter'
 Plugin 'tpope/vim-endwise'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-sensible'
@@ -16,9 +17,11 @@ Plugin 'twerth/ir_black'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'vim-ruby/vim-ruby'
-Plugin 'vim-scripts/indentpython.vim'
+Plugin 'vim-scripts/indentpython'
 Plugin 'vim-syntastic/syntastic'
 Plugin 'psf/black'
+Plugin 'github/copilot'
+Plugin 'fisadev/vim-isort'
 
 call vundle#end()
 
@@ -110,3 +113,9 @@ let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
 
 " Syntastic
 let g:syntastic_python_checkers=['pyflakes', 'pylint', 'mypy']
+
+" Black on save
+augroup black_on_save
+  autocmd!
+  autocmd BufWritePre *.py Black
+augroup end
