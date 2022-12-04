@@ -6,10 +6,14 @@ call vundle#begin('~/.config/nvim/bundle')
 
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'dracula/vim', { 'name': 'dracula' }
 Plugin 'fatih/vim-go'
+Plugin 'fisadev/vim-isort'
+Plugin 'github/copilot.vim'
 Plugin 'mileszs/ack.vim'
-Plugin 'scrooloose/nerdtree'
+Plugin 'psf/black'
 Plugin 'scrooloose/nerdcommenter'
+Plugin 'scrooloose/nerdtree'
 Plugin 'tpope/vim-endwise'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-sensible'
@@ -19,54 +23,46 @@ Plugin 'vim-airline/vim-airline-themes'
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'vim-scripts/indentpython'
 Plugin 'vim-syntastic/syntastic'
-Plugin 'psf/black'
-Plugin 'github/copilot'
-Plugin 'fisadev/vim-isort'
 
 call vundle#end()
 
-set hidden
+set autoindent
+set autoread
+set backspace=indent,eol,start
+set clipboard=unnamedplus,unnamed
+set colorcolumn=120
 set directory=~/.nvim/tmp
 set encoding=utf-8
-set showcmd
-set visualbell
-set autoread
-
-set nowrap
-set tabstop=2
-set shiftwidth=2
 set expandtab
-set backspace=indent,eol,start
-
+set hidden
+set hlsearch
+set ignorecase
+set incsearch
+set laststatus=2
 set list
 set listchars=""
 set listchars=tab:..,trail:.,extends:>,precedes:<
-
-set hlsearch
-set incsearch
-set ignorecase
-set smartcase
-
-set textwidth=120
-set colorcolumn=120
-set ruler
+set mouse=a
+set nowrap
 set number
-set laststatus=2
 set numberwidth=4
-set autoindent
-
-set undofile
+set ruler
+set shiftwidth=2
+set showcmd
+set smartcase
+set tabstop=2
+set textwidth=120
+set ttyfast
 set undodir=~/.nvim/tmp/undo
-
-set wildmode=longest,list,full
+set undofile
+set visualbell
 set wildmenu
-
-set clipboard=unnamedplus,unnamed
+set wildmode=longest,list,full
 
 filetype plugin indent on
 syntax enable
 
-silent! colorscheme ir_black
+silent! colorscheme dracula
 
 let g:airline_powerline_fonts = 1
 let g:airline_theme = 'bubblegum'
