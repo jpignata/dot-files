@@ -6,7 +6,6 @@ call vundle#begin('~/.config/nvim/bundle')
 
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'dracula/vim', { 'name': 'dracula' }
 Plugin 'fatih/vim-go'
 Plugin 'fisadev/vim-isort'
 Plugin 'github/copilot.vim'
@@ -62,7 +61,7 @@ set wildmode=longest,list,full
 filetype plugin indent on
 syntax enable
 
-silent! colorscheme dracula
+silent! colorscheme ir_black
 
 let g:airline_powerline_fonts = 1
 let g:airline_theme = 'bubblegum'
