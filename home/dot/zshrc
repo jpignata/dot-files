@@ -17,4 +17,8 @@ if [ -r ~/.zshrc.local ]; then
   source ~/.zshrc.local
 fi
 
+if command -v bat >/dev/null 2>&1; then
+  alias cat="bat"
+fi
+
 export LSCOLORS=ExGxBxDxCxEgEdxbxgxcxd

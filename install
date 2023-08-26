@@ -19,7 +19,7 @@ paths=$(mktemp -q) && {
   rm "$paths"
 }
 
-## Install vim plugins via Vundle
+# Install vim plugins via Vundle
 rm -rf ~/.config/nvim/bundle/Vundle.vim
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.config/nvim/bundle/Vundle.vim
 nvim +PluginInstall +qall
