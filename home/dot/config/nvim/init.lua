@@ -1,22 +1,22 @@
-require('config.lazy')
+require("config.lazy")
 
-require('lazy').setup({
+require("lazy").setup {
   spec = {
-    'EdenEast/nightfox.nvim',
-    'github/copilot.vim',
-    'nvim-lualine/lualine.nvim',
-    'nvim-telescope/telescope-fzf-native.nvim',
-    'nvim-telescope/telescope.nvim',
-    'nvim-tree/nvim-tree.lua',
-    'nvim-treesitter/nvim-treesitter',
-    'nvim-treesitter/nvim-treesitter-textobjects',
-    'psf/black',
+    "EdenEast/nightfox.nvim",
+    "github/copilot.vim",
+    "nvim-lualine/lualine.nvim",
+    "nvim-telescope/telescope-fzf-native.nvim",
+    "nvim-telescope/telescope.nvim",
+    "nvim-tree/nvim-tree.lua",
+    "nvim-treesitter/nvim-treesitter",
+    "nvim-treesitter/nvim-treesitter-textobjects",
+    "psf/black",
   },
-  install = { colorscheme = { 'habamax' } },
+  install = { colorscheme = { "habamax" } },
   checker = { enabled = true },
-})
+}
 
-require('nvim-treesitter.configs').setup {
+require("nvim-treesitter.configs").setup {
     ensure_installed = "all",
     sync_install = false,
     auto_install = true,
@@ -26,13 +26,13 @@ require('nvim-treesitter.configs').setup {
     },
 }
 
-require('nvim-tree').setup()
+require("nvim-tree").setup()
 
-require('lualine').setup {
+require("lualine").setup {
     options = {
         disabled_filetypes = {
-            winbar = { 'NvimTree' },
-            statusline = { 'NvimTree' },
+            winbar = { "NvimTree" },
+            statusline = { "NvimTree" },
         },
         refresh = {
             statusline = 200,
@@ -54,10 +54,10 @@ vim.g.loaded_netrwPlugin = 1
 vim.o.autoindent = true
 vim.o.clipboard = "unnamedplus"
 vim.o.expandtab = true
-vim.o.foldcolumn = '1'
-vim.o.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
+vim.o.foldcolumn = "1"
+vim.o.foldexpr = "v:lua.vim.treesitter.foldexpr()"
 vim.o.foldlevel = 99
-vim.o.foldmethod = 'expr'
+vim.o.foldmethod = "expr"
 vim.o.number = true
 vim.o.shiftwidth = 2
 vim.o.smartindent = true
