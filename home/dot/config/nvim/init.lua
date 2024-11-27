@@ -1,6 +1,22 @@
-require("config.lazy")
+require('config.lazy')
 
-require'nvim-treesitter.configs'.setup {
+require('lazy').setup({
+  spec = {
+    'EdenEast/nightfox.nvim',
+    'github/copilot.vim',
+    'nvim-lualine/lualine.nvim',
+    'nvim-telescope/telescope-fzf-native.nvim',
+    'nvim-telescope/telescope.nvim',
+    'nvim-tree/nvim-tree.lua',
+    'nvim-treesitter/nvim-treesitter',
+    'nvim-treesitter/nvim-treesitter-textobjects',
+    'psf/black',
+  },
+  install = { colorscheme = { 'habamax' } },
+  checker = { enabled = true },
+})
+
+require('nvim-treesitter.configs').setup {
     ensure_installed = "all",
     sync_install = false,
     auto_install = true,
@@ -10,7 +26,7 @@ require'nvim-treesitter.configs'.setup {
     },
 }
 
-require("nvim-tree").setup()
+require('nvim-tree').setup()
 
 require('lualine').setup {
     options = {
@@ -32,7 +48,6 @@ vim.keymap.set("n", "<leader>g", ":Telescope live_grep<CR>", { desc = "Live grep
 
 vim.opt.termguicolors = true
 
-vim.g.mapleader = " "
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
@@ -47,5 +62,6 @@ vim.o.number = true
 vim.o.shiftwidth = 2
 vim.o.smartindent = true
 vim.o.tabstop = 2
+vim.o.smarttab = true
 
 vim.cmd("colorscheme nightfox")
