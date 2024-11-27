@@ -1,25 +1,28 @@
 #!/bin/bash
 
-# Copy files
-paths=$(mktemp -q) && {
-  find home ! -ipath '**/.*' ! -ipath home > "$paths"
+# Symlink files and directories from home/ to ~
+find home -mindepth 1 -maxdepth 2 | while IFS= read -r path; do
+  basename=$(basename "$path")
 
-  while IFS= read -r path
-  do
-    target=~/$(echo "$path" | sed -e 's/home\///' -e 's@dot/*@.@')
+  # Exclude files and directories starting with a dot
+  if [[ "$basename" == .* ]]; then
+    continue
+  fi
 
-    if [ -d "$path" ]; then
-      test -d "$target" || mkdir -p "$target"
-    elif [ -f "$path" ]; then
-      echo "Copying ${path} to ${target}" 
-      cp "$path" "$target"
-    fi
-  done < "$paths"
+  if [[ "$basename" == dot ]]; then
+    continue
+  fi
 
-  rm "$paths"
-}
+  # Determine the target path
+  target=~/$(echo "$path" | sed -e 's/home\///' -e 's@dot/@.@')
 
-# Install vim plugins via Vundle
-rm -rf ~/.config/nvim/bundle/
-git clone https://github.com/VundleVim/Vundle.vim.git ~/.config/nvim/bundle/Vundle.vim
-nvim +PluginInstall +qall
+  # Skip if the target already exists
+  if [ -e "$target" ]; then
+    echo "Skipping $target (already exists)"
+    continue
+  fi
+
+  # Create symlink
+  echo "Linking $path to $target"
+  ln -s "$(pwd)/$path" "$target"
+done
