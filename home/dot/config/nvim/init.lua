@@ -44,8 +44,8 @@ vim.o.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
 vim.o.foldlevel = 99
 vim.o.foldmethod = 'expr'
 vim.o.number = true
-vim.o.shiftwidth = 4
+vim.o.shiftwidth = 2
 vim.o.smartindent = true
-vim.o.tabstop = 4
+vim.o.tabstop = 2
 
 vim.cmd("colorscheme nightfox")
