@@ -52,6 +52,7 @@ require("lualine").setup {
 vim.keymap.set("n", "<leader>n", ":NvimTreeToggle<CR>", { desc = "Toggle NvimTree" })
 vim.keymap.set("n", "<leader>f", ":Telescope find_files<CR>", { desc = "Find files" })
 vim.keymap.set("n", "<leader>g", ":Telescope live_grep<CR>", { desc = "Live grep" })
+vim.keymap.set("n", "<leader>/", ":nohlsearch<CR>", { desc = "Clear search" })
 
 vim.opt.termguicolors = true
 
