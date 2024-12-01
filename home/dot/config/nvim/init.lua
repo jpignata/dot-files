@@ -61,9 +61,6 @@ vim.keymap.set("n", "<leader>/", ":nohlsearch<CR>", { desc = "Clear search" })
 
 vim.opt.termguicolors = true
 
-vim.g.loaded_netrw = 1
-vim.g.loaded_netrwPlugin = 1
-
 vim.o.autoindent = true
 vim.o.clipboard = "unnamedplus"
 vim.o.expandtab = true
@@ -77,14 +74,14 @@ vim.o.smartindent = true
 vim.o.tabstop = 2
 vim.o.smarttab = true
 
-vim.cmd [[
-  let g:ale_use_global_executables = 1
-  let g:ale_fix_on_save = 1
-  let g:ale_fixers = {
-    \    '*': ['remove_trailing_lines', 'trim_whitespace'],
-    \    'javascript': ['eslint', 'prettier'],
-    \    'python': ['isort', 'black'],
-    \}
-]]
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+vim.g.ale_fix_on_save = 1
+vim.g.ale_use_global_executables = 1
+vim.g.ale_fixers = {
+  default = { 'remove_trailing_lines', 'trim_whitespace' },
+  javascript = { 'eslint', 'prettier' },
+  python = { 'isort', 'black' },
+}
 
 vim.cmd("colorscheme nightfox")
