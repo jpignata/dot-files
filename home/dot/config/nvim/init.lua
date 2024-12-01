@@ -26,7 +26,14 @@ require("nvim-treesitter.configs").setup {
     },
 }
 
-require("nvim-tree").setup()
+require("nvim-tree").setup {
+  git = {
+    ignore = false,
+  },
+  filters = {
+    custom = { ".git" },
+  },
+}
 
 require("lualine").setup {
     options = {
