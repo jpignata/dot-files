@@ -1,3 +1,5 @@
+-- luacheck: globals vim
+
 require("config.lazy")
 
 require("lazy").setup {
@@ -10,7 +12,7 @@ require("lazy").setup {
     "nvim-tree/nvim-tree.lua",
     "nvim-treesitter/nvim-treesitter",
     "nvim-treesitter/nvim-treesitter-textobjects",
-    "psf/black",
+    "dense-analysis/ale",
   },
   install = { colorscheme = { "habamax" } },
   checker = { enabled = true },
@@ -49,9 +51,12 @@ require("lualine").setup {
     }
 }
 
-vim.keymap.set("n", "<leader>n", ":NvimTreeToggle<CR>", { desc = "Toggle NvimTree" })
-vim.keymap.set("n", "<leader>f", ":Telescope find_files<CR>", { desc = "Find files" })
-vim.keymap.set("n", "<leader>g", ":Telescope live_grep<CR>", { desc = "Live grep" })
+local telescope = require("telescope.builtin")
+local nvim_tree = require("nvim-tree.api")
+
+vim.keymap.set("n", "<leader>f", telescope.find_files, {})
+vim.keymap.set("n", "<leader>g", telescope.live_grep, {})
+vim.keymap.set("n", "<leader>n", nvim_tree.tree.toggle, {})
 vim.keymap.set("n", "<leader>/", ":nohlsearch<CR>", { desc = "Clear search" })
 
 vim.opt.termguicolors = true
@@ -71,5 +76,15 @@ vim.o.shiftwidth = 2
 vim.o.smartindent = true
 vim.o.tabstop = 2
 vim.o.smarttab = true
+
+vim.cmd [[
+  let g:ale_use_global_executables = 1
+  let g:ale_fix_on_save = 1
+  let g:ale_fixers = {
+    \    '*': ['remove_trailing_lines', 'trim_whitespace'],
+    \    'javascript': ['eslint', 'prettier'],
+    \    'python': ['isort', 'black'],
+    \}
+]]
 
 vim.cmd("colorscheme nightfox")
