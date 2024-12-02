@@ -79,9 +79,9 @@ vim.g.loaded_netrwPlugin = 1
 vim.g.ale_fix_on_save = 1
 vim.g.ale_use_global_executables = 1
 vim.g.ale_fixers = {
-  default = { 'remove_trailing_lines', 'trim_whitespace' },
-  javascript = { 'eslint', 'prettier' },
-  python = { 'isort', 'black' },
+  default = { "remove_trailing_lines", "trim_whitespace" },
+  javascript = { "eslint", "prettier" },
+  python = { "isort", "black" },
 }
 
 vim.cmd("colorscheme nightfox")
