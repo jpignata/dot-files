@@ -53,11 +53,14 @@ require("lualine").setup {
 
 local telescope = require("telescope.builtin")
 local nvim_tree = require("nvim-tree.api")
+local clear_search = function()
+  vim.cmd("nohlsearch")
+end
 
 vim.keymap.set("n", "<leader>f", telescope.find_files, {})
 vim.keymap.set("n", "<leader>g", telescope.live_grep, {})
 vim.keymap.set("n", "<leader>n", nvim_tree.tree.toggle, {})
-vim.keymap.set("n", "<leader>/", ":nohlsearch<CR>", { desc = "Clear search" })
+vim.keymap.set("n", "<leader>/", clear_search, {})
 
 vim.opt.termguicolors = true
 
