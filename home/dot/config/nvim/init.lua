@@ -5,6 +5,7 @@ require("config.lazy")
 require("lazy").setup {
   spec = {
     "EdenEast/nightfox.nvim",
+    "dense-analysis/ale",
     "github/copilot.vim",
     "nvim-lualine/lualine.nvim",
     "nvim-telescope/telescope-fzf-native.nvim",
@@ -12,7 +13,6 @@ require("lazy").setup {
     "nvim-tree/nvim-tree.lua",
     "nvim-treesitter/nvim-treesitter",
     "nvim-treesitter/nvim-treesitter-textobjects",
-    "dense-analysis/ale",
   },
   install = { colorscheme = { "habamax" } },
   checker = { enabled = true },
