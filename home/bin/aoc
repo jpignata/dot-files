@@ -1,0 +1,22 @@
+#!/usr/bin/env python3
+
+import os
+import sys
+from datetime import datetime
+
+import requests
+
+session_token = os.getenv("AOC_SESSION_TOKEN")
+day = sys.argv[1] if len(sys.argv) > 1 else datetime.now().day
+year = sys.argv[2] if len(sys.argv) > 2 else datetime.now().year
+
+response = requests.get(
+    f"https://adventofcode.com/{year}/day/{day}/input",
+    cookies={"session": session_token},
+    timeout=10,
+)
+
+if response.status_code == 200:
+    print(response.text.strip())
+else:
+    print(f"❌ {response.text.strip()}", file=sys.stderr)
