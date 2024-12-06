@@ -2,13 +2,15 @@
 
 import os
 import sys
-from datetime import datetime
+from datetime import datetime, timedelta, timezone
 
 import requests
 
 session_token = os.getenv("AOC_SESSION_TOKEN")
-day = sys.argv[1] if len(sys.argv) > 1 else datetime.now().day
-year = sys.argv[2] if len(sys.argv) > 2 else datetime.now().year
+est = timezone(timedelta(hours=-5))
+now = datetime.now(est)
+day = sys.argv[1] if len(sys.argv) > 1 else now.day
+year = sys.argv[2] if len(sys.argv) > 2 else now.year
 
 response = requests.get(
     f"https://adventofcode.com/{year}/day/{day}/input",
