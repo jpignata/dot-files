@@ -26,6 +26,9 @@ require("nvim-treesitter.configs").setup {
         enable = true,
         additional_vim_regex_highlighting = false,
     },
+    indent = {
+        enable = true,
+    },
 }
 
 require("nvim-tree").setup {
@@ -38,17 +41,17 @@ require("nvim-tree").setup {
 }
 
 require("lualine").setup {
-    options = {
-        disabled_filetypes = {
-            winbar = { "NvimTree" },
-            statusline = { "NvimTree" },
-        },
-        refresh = {
-            statusline = 200,
-            tabline = 200,
-            winbar = 200,
-        }
+  options = {
+    disabled_filetypes = {
+      winbar = { "NvimTree" },
+      statusline = { "NvimTree" },
+    },
+    refresh = {
+      statusline = 200,
+      tabline = 200,
+      winbar = 200,
     }
+  }
 }
 
 local telescope = require("telescope.builtin")
@@ -73,7 +76,6 @@ vim.o.foldlevel = 99
 vim.o.foldmethod = "expr"
 vim.o.number = true
 vim.o.shiftwidth = 2
-vim.o.smartindent = true
 vim.o.tabstop = 2
 vim.o.smarttab = true
 
@@ -87,6 +89,14 @@ vim.g.ale_fixers = {
     "trim_whitespace"
   },
   javascript = {
+    "eslint",
+    "prettier"
+  },
+  typescript = {
+    "eslint",
+    "prettier"
+  },
+  typescriptreact = {
     "eslint",
     "prettier"
   },
