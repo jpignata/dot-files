@@ -82,7 +82,9 @@ vim.o.smarttab = true
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 vim.g.ale_fix_on_save = 1
-vim.g.ale_use_global_executables = 1
+vim.g.ale_use_global_executables = 0
+vim.g.ale_completion_enabled = 1
+
 vim.g.ale_fixers = {
   default = {
     "remove_trailing_lines",

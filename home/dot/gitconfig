@@ -12,3 +12,9 @@
 
 [github]
   user = jpignata
+
+[init]
+	defaultBranch = main
+
+[push]
+  autoSetupRemote = true
