@@ -6,29 +6,13 @@ require("lazy").setup {
   spec = {
     "EdenEast/nightfox.nvim",
     "dense-analysis/ale",
-    "github/copilot.vim",
     "nvim-lualine/lualine.nvim",
-    "nvim-telescope/telescope-fzf-native.nvim",
+    { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
     "nvim-telescope/telescope.nvim",
     "nvim-tree/nvim-tree.lua",
-    "nvim-treesitter/nvim-treesitter",
-    "nvim-treesitter/nvim-treesitter-textobjects",
   },
   install = { colorscheme = { "habamax" } },
   checker = { enabled = true },
-}
-
-require("nvim-treesitter.configs").setup {
-    ensure_installed = "all",
-    sync_install = false,
-    auto_install = true,
-    highlight = {
-        enable = true,
-        additional_vim_regex_highlighting = false,
-    },
-    indent = {
-        enable = true,
-    },
 }
 
 require("nvim-tree").setup {
@@ -71,9 +55,8 @@ vim.o.autoindent = true
 vim.o.clipboard = "unnamedplus"
 vim.o.expandtab = true
 vim.o.foldcolumn = "1"
-vim.o.foldexpr = "v:lua.vim.treesitter.foldexpr()"
 vim.o.foldlevel = 99
-vim.o.foldmethod = "expr"
+vim.o.foldmethod = "manual"
 vim.o.number = true
 vim.o.shiftwidth = 2
 vim.o.tabstop = 2
