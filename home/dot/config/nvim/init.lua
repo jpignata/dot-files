@@ -68,6 +68,12 @@ vim.g.ale_fix_on_save = 1
 vim.g.ale_use_global_executables = 1
 vim.g.ale_completion_enabled = 1
 
+vim.g.ale_linters = {
+  python = {
+    "pyflakes"
+  },
+}
+
 vim.g.ale_fixers = {
   default = {
     "remove_trailing_lines",
