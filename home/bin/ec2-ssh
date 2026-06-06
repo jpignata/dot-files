@@ -1,0 +1,117 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+usage() {
+  cat <<'USAGE'
+Usage: ec2-ssh [options] INSTANCE_NAME [ssh-args...]
+
+SSH into a running EC2 instance by its Name tag.
+
+Options:
+  -p, --profile PROFILE   AWS profile to use
+  -r, --region REGION     AWS region to use
+  -u, --user USER         SSH user, defaults to EC2_SSH_USER or ec2-user
+  -i, --identity FILE     SSH identity file
+      --private           Use the instance private IP instead of public IP
+  -h, --help              Show this help
+
+Examples:
+  ec2-ssh api-prod
+  ec2-ssh --profile work --region us-east-1 --user ubuntu api-prod
+  ec2-ssh api-prod -- -L 8080:localhost:8080
+USAGE
+}
+
+profile=()
+region=()
+ssh_user="${EC2_SSH_USER:-ec2-user}"
+identity=()
+address_field="PublicIpAddress"
+
+while [[ $# -gt 0 ]]; do
+  case "$1" in
+    -p|--profile)
+      [[ $# -ge 2 ]] || { echo "Missing value for $1" >&2; exit 2; }
+      profile=(--profile "$2")
+      shift 2
+      ;;
+    -r|--region)
+      [[ $# -ge 2 ]] || { echo "Missing value for $1" >&2; exit 2; }
+      region=(--region "$2")
+      shift 2
+      ;;
+    -u|--user)
+      [[ $# -ge 2 ]] || { echo "Missing value for $1" >&2; exit 2; }
+      ssh_user="$2"
+      shift 2
+      ;;
+    -i|--identity)
+      [[ $# -ge 2 ]] || { echo "Missing value for $1" >&2; exit 2; }
+      identity=(-i "$2")
+      shift 2
+      ;;
+    --private)
+      address_field="PrivateIpAddress"
+      shift
+      ;;
+    -h|--help)
+      usage
+      exit 0
+      ;;
+    --)
+      shift
+      break
+      ;;
+    -*)
+      echo "Unknown option: $1" >&2
+      usage >&2
+      exit 2
+      ;;
+    *)
+      break
+      ;;
+  esac
+done
+
+if [[ $# -lt 1 ]]; then
+  usage >&2
+  exit 2
+fi
+
+instance_name="$1"
+shift
+
+if ! command -v aws >/dev/null 2>&1; then
+  echo "aws CLI is not installed or not on PATH" >&2
+  exit 1
+fi
+
+mapfile -t instances < <(
+  aws "${profile[@]}" "${region[@]}" ec2 describe-instances \
+    --filters "Name=tag:Name,Values=${instance_name}" "Name=instance-state-name,Values=running" \
+    --query "Reservations[].Instances[].{id:InstanceId,address:${address_field}}" \
+    --output text
+)
+
+case "${#instances[@]}" in
+  0)
+    echo "No running EC2 instance found with Name tag: ${instance_name}" >&2
+    exit 1
+    ;;
+  1)
+    ;;
+  *)
+    echo "Multiple running EC2 instances found with Name tag: ${instance_name}" >&2
+    printf '%s\n' "${instances[@]}" >&2
+    exit 1
+    ;;
+esac
+
+read -r address instance_id <<<"${instances[0]}"
+
+if [[ -z "${address}" || "${address}" == "None" ]]; then
+  echo "Instance ${instance_id} has no ${address_field}" >&2
+  exit 1
+fi
+
+exec ssh "${identity[@]}" "${ssh_user}@${address}" "$@"
