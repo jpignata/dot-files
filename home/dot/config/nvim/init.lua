@@ -9,6 +9,37 @@ require("lazy").setup {
     "nvim-lualine/lualine.nvim",
     { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
     "nvim-telescope/telescope.nvim",
+    {
+      "nvim-treesitter/nvim-treesitter",
+      branch = "master",
+      build = ":TSUpdate",
+      config = function()
+        require("nvim-treesitter.configs").setup {
+          ensure_installed = {
+            "bash",
+            "css",
+            "html",
+            "javascript",
+            "json",
+            "lua",
+            "markdown",
+            "python",
+            "query",
+            "tsx",
+            "typescript",
+            "vim",
+            "vimdoc",
+            "yaml",
+          },
+          highlight = {
+            enable = true,
+          },
+          indent = {
+            enable = true,
+          },
+        }
+      end,
+    },
     "nvim-tree/nvim-tree.lua",
   },
   install = { colorscheme = { "habamax" } },
