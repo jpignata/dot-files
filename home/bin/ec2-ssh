@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-set -euo pipefail
+set -eo pipefail
 
 usage() {
   cat <<'USAGE'
@@ -86,10 +86,13 @@ if ! command -v aws >/dev/null 2>&1; then
   exit 1
 fi
 
-mapfile -t instances < <(
+instances=()
+while IFS= read -r instance; do
+  [[ -n "${instance}" ]] && instances+=("${instance}")
+done < <(
   aws "${profile[@]}" "${region[@]}" ec2 describe-instances \
     --filters "Name=tag:Name,Values=${instance_name}" "Name=instance-state-name,Values=running" \
-    --query "Reservations[].Instances[].{id:InstanceId,address:${address_field}}" \
+    --query "Reservations[].Instances[].[${address_field},InstanceId]" \
     --output text
 )
 
