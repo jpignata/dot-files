@@ -33,9 +33,11 @@ require("lazy").setup {
           },
           highlight = {
             enable = true,
+            disable = { "bash" },
           },
           indent = {
             enable = true,
+            disable = { "bash" },
           },
         }
       end,
