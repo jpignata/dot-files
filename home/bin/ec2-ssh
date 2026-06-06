@@ -10,7 +10,7 @@ SSH into a running EC2 instance by its Name tag.
 Options:
   -p, --profile PROFILE   AWS profile to use
   -r, --region REGION     AWS region to use
-  -u, --user USER         SSH user, defaults to EC2_SSH_USER or ec2-user
+  -u, --user USER         SSH user, defaults to EC2_SSH_USER or current user
   -i, --identity FILE     SSH identity file
       --private           Use the instance private IP instead of public IP
   -h, --help              Show this help
@@ -24,7 +24,7 @@ USAGE
 
 profile=()
 region=()
-ssh_user="${EC2_SSH_USER:-ec2-user}"
+ssh_user="${EC2_SSH_USER:-${USER}}"
 identity=()
 address_field="PublicIpAddress"
 
