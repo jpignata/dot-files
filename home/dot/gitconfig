@@ -18,3 +18,7 @@
 
 [push]
   autoSetupRemote = true
+[diff]
+	tool = vimdiff
+[difftool]
+	prompt = false
