@@ -10,6 +10,15 @@ require("lazy").setup {
     { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
     "nvim-telescope/telescope.nvim",
     {
+      "sindrets/diffview.nvim",
+      dependencies = "nvim-lua/plenary.nvim",
+      config = function()
+        require("diffview").setup {
+          use_icons = false,
+        }
+      end,
+    },
+    {
       "nvim-treesitter/nvim-treesitter",
       branch = "main",
       lazy = false,
@@ -106,11 +115,25 @@ local nvim_tree = require("nvim-tree.api")
 local clear_search = function()
   vim.cmd("nohlsearch")
 end
+local open_diffview = function()
+  vim.cmd("DiffviewOpen")
+end
+local open_staged_diffview = function()
+  vim.cmd("DiffviewOpen --staged")
+end
+local close_diffview = function()
+  vim.cmd("DiffviewClose")
+end
+
+vim.api.nvim_create_user_command("Dq", close_diffview, {})
 
 vim.keymap.set("n", "<leader>f", telescope.find_files, {})
 vim.keymap.set("n", "<leader>g", telescope.live_grep, {})
 vim.keymap.set("n", "<leader>n", nvim_tree.tree.toggle, {})
 vim.keymap.set("n", "<leader>/", clear_search, {})
+vim.keymap.set("n", "<leader>d", open_diffview, {})
+vim.keymap.set("n", "<leader>D", open_staged_diffview, {})
+vim.keymap.set("n", "<leader>q", close_diffview, {})
 
 vim.opt.termguicolors = true
 
