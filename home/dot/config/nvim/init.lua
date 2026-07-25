@@ -7,6 +7,7 @@ require("lazy").setup {
     "EdenEast/nightfox.nvim",
     "dense-analysis/ale",
     "nvim-lualine/lualine.nvim",
+    "neovim/nvim-lspconfig",
     { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
     "nvim-telescope/telescope.nvim",
     {
@@ -87,6 +88,17 @@ require("lazy").setup {
   checker = { enabled = true },
 }
 
+vim.lsp.config("basedpyright", {
+  settings = {
+    basedpyright = {
+      analysis = {
+        typeCheckingMode = "basic",
+      },
+    },
+  },
+})
+vim.lsp.enable("basedpyright")
+
 require("nvim-tree").setup {
   git = {
     ignore = false,
@@ -127,6 +139,7 @@ end
 
 vim.api.nvim_create_user_command("Dq", close_diffview, {})
 
+vim.keymap.set("n", "<leader>c", vim.lsp.buf.incoming_calls, {})
 vim.keymap.set("n", "<leader>f", telescope.find_files, {})
 vim.keymap.set("n", "<leader>g", telescope.live_grep, {})
 vim.keymap.set("n", "<leader>n", nvim_tree.tree.toggle, {})
