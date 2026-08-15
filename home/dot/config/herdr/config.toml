@@ -1,0 +1,45 @@
+# Herdr configuration mirroring ~/.tmux.conf and tmux's standard keys.
+
+[theme]
+name = "terminal"
+
+[theme.custom]
+panel_bg = "#1c1c1c"
+accent = "#5fafff"
+
+[terminal]
+shell_mode = "auto"
+new_cwd = "follow"
+
+[keys]
+prefix = "ctrl+space"
+
+# Standard tmux session/window behavior.
+detach = "prefix+d"
+new_tab = "prefix+c"
+rename_tab = "prefix+comma"
+previous_tab = "prefix+p"
+next_tab = "prefix+n"
+switch_tab = "prefix+1..9"
+close_tab = "prefix+ampersand"
+
+# Match the custom split and pane-navigation bindings in ~/.tmux.conf.
+split_vertical = "prefix+shift+backslash"
+split_horizontal = "prefix+minus"
+focus_pane_left = "prefix+h"
+focus_pane_down = "prefix+j"
+focus_pane_up = "prefix+k"
+focus_pane_right = "prefix+l"
+
+# Keep familiar tmux pane controls.
+close_pane = "prefix+x"
+zoom = "prefix+z"
+resize_mode = "prefix+r"
+
+[ui]
+mouse_capture = true
+copy_on_select = true
+mouse_scroll_lines = 3
+pane_borders = true
+tab_bar_position = "bottom"
+
