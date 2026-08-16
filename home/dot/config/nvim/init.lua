@@ -42,6 +42,16 @@ require("lazy").setup {
         }):wait(300000)
       end,
       config = function()
+        -- The main branch builds parsers with the tree-sitter CLI rather than
+        -- invoking cc directly, and install() fails silently when it is absent.
+        if vim.fn.executable("tree-sitter") == 0 then
+          vim.notify(
+            "nvim-treesitter: tree-sitter CLI not found, parsers cannot be built.\n"
+              .. "Install it with: brew install tree-sitter-cli",
+            vim.log.levels.ERROR
+          )
+        end
+
         require("nvim-treesitter").install({
           "css",
           "html",
