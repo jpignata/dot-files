@@ -43,3 +43,4 @@ mouse_scroll_lines = 3
 pane_borders = true
 tab_bar_position = "bottom"
 
+agent_panel_sort = "priority"
