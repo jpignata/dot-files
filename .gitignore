@@ -1,4 +1,5 @@
 .DS_Store
 home/dot/config/iterm2
-nvim.log
-home/dot/config/herdr/.plugins.lock
+*.log
+home/dot/config/herdr/*
+!home/dot/config/herdr/config.toml

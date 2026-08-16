@@ -1,0 +1,8 @@
+{
+  "model": "opus",
+  "skipWorkflowUsageWarning": true,
+  "theme": "dark",
+  "permissions": {
+    "defaultMode": "auto"
+  }
+}
